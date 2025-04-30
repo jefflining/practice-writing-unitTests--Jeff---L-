@@ -6,23 +6,25 @@
 
 let cart = [];
 
-const shoppingCart = () => {
+//const shoppingCart = () => {
 
 
 
-function addItem(cart, item, quantity) {
-    cart.push({item, quantity}); 
+    function addItem(cart, item, quantity) {
+        cart.push({
+            groceryItem: item,
+            itemQuantity: quantity
+        });
+    
+        return cart;
+
 }
-    return addItem;
-
-}
-
-function removeItem(cart, item) {
+function removeItem(cart, item) {    
 const index = cart.indexOf(item);
 if (index > -1) {
     cart.splice(index, 1);
 }
-    return removeItem;
+    return cart;
 } 
 
 function getTotalItems(cart) {
@@ -33,9 +35,15 @@ function getTotalItems(cart) {
 }
 
 
+let dummieCart = []
+addItem(dummieCart, "apple", 2); 
+console.log(dummieCart);
 
-const addItem = shoppingCart();
-addItem(cart, "apple", 2); 
-console.log(cart);
+removeItem(dummieCart, "apple");
 
+console.log(dummieCart);
+
+getTotalItems(dummieCart);
+
+console.log(dummieCart);
 
