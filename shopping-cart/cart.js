@@ -17,15 +17,34 @@ let cart = [];
         });
     
         return cart;
+    }
+
+        function removeItem(cart, item) {
+            const index = cart.findIndex(cartItem => cartItem.name === item.name);
+          
+            if (index !== -1) {
+              if (cart[index].quantity > 1) {
+                cart[index].quantity -= 1;
+              } else {
+                // Remove item completely if quantity is 1
+                cart.splice(index, 1);
+              }
+            }
+          
+            return cart;
+
+
+
+
 
 }
-function removeItem(cart, item) {    
-const index = cart.indexOf(item);
-if (index > -1) {
-    cart.splice(index, 1);
-}
-    return cart;
-} 
+// function removeItem(cart, item) {    
+// const index = cart.indexOf(item);
+// if (index > -1) {
+//     cart.splice(index, 1);
+// }
+//     return cart;
+//} 
 
 function getTotalItems(cart) {
     return cart.reduce (function(total, item) {
@@ -39,7 +58,7 @@ let dummieCart = []
 addItem(dummieCart, "apple", 2); 
 console.log(dummieCart);
 
-removeItem(dummieCart, "apple");
+//removeItem(dummieCart, "apple");
 
 console.log(dummieCart);
 
