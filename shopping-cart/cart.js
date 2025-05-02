@@ -23,27 +23,25 @@ function addItem(cart, item, quantity) {
       }
       return cart;
 }
-// function removeItem(cart, item) {
-// const index = cart.indexOf(item);
-// if (index > -1) {
-//     cart.splice(index, 1);
-// }
-//     return cart;
-//}
+
 function getTotalItems(cart) {
 return cart.reduce (function (total, item) {
   return total + item.quantity;
 }, 0);
 }
+
+
   // console.log(cart.reduce(removeItem(total, cart.quantity, 0)))
   //     return total + quantity;
   // }
-let dummieCart = []
-console.log(addItem(dummieCart, "apple", 1));
 
-console.log(removeItem(dummieCart,"carrot"));
+//let dummieCart = [{ item: 'apple', quantity: 1 }, { item: 'banana', quantity: 1}, { item: 'orange', quantity: 1} ];
+let dummieCart = [];
+// console.log(addItem(dummieCart, "apple", 1));
+
+// console.log(removeItem(dummieCart,"carrot"));
 //console.log(dummieCart);
-//console.log(getTotalItems(dummieCart));
+console.log(getTotalItems(dummieCart));
 // (dummieCart);
 
-module.exports = {addItem, removeItem, getTotalItems};
+module.exports = {addItem, removeItem, getTotalItems,};
